@@ -1,0 +1,41 @@
+<p xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">products works!</p>
+
+{{ categorie }}
+<div>
+  <li>selctionner la quantite <input type="number"  name="price" [(ngModel)]="price" [ngStyle]="{'background-color' :price <= 20 ?'blue' : 'green' , 'font-size' : price < 30 ?'20px':'56px'}" > </li>
+  <li>selctionner la quantite avec un code source  <input type="number"  [(ngModel)]="price" [ngStyle]="{'background-color' : getColor() ,'font-size': getSize() } " > </li>
+<button [ngClass]="getClass()"> Test </button>
+</div>
+<ul>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let p of products let i=index">
+      <div *ngIf="price<p.price">
+  <div class="card" style="width: 18rem;"  >
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">produit {{p.id}}</h5>
+      <p class="card-text">
+        id: {{p.id}} ************** title : {{p.title}} ** price : {{p.price}} ** quantity : {{p.quantity}}  ***** index {{i}}  ******* like {{p.like}}
+
+      </p>
+      <button class="btn btn-primary"[disabled]="p.quantity<=0"  (click)="buy(i)"> buy </button>
+      <button class="btn btn-primary" [disabled]="p.like<=23" (click)="like(i)"> Like !!</button>
+      <a [routerLink]="['/details',p.id]" class="btn btn-primary">other details</a>
+    </div>
+
+  </div>
+      </div>
+  </div>
+  </div>
+
+
+
+  <div *ngFor="let p of products let i=index">
+    <li *ngIf="p.price >price">
+      id: {{p.id}} ** price : {{p.title}} ** price : {{p.price}} ** quantity : {{p.quantity}}  ***** index {{i}}  ******* like {{p.like}}
+      <button [disabled]="p.quantity<=0"  (click)="buy(i)"> buy </button>
+      <button  [disabled]="p.like<=23" (click)="like(i)"> Like !!</button>
+    </li>
+
+  </div>
+</ul>
