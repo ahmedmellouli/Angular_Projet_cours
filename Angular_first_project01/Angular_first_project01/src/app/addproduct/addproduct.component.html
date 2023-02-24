@@ -30,12 +30,12 @@
 
   <div class="form-group">
     <label >Quatity</label>
-    <input type="number" class="form-control" required #Quantity="ngModel" min="99" max="999" name="quatity" placeholder="Quatity" [(ngModel)]="product.quatity">
+    <input type="number" class="form-control" required #Quantity="ngModel" min="99" max="999" name="quatity" placeholder="Quatity" [(ngModel)]="product.quantity">
     <div *ngIf="Quantity.invalid && Quantity.touched">
       <div class="alert alert-danger">quality required</div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Add Product</button>
+  <button type="submit" class="btn btn-primary" [disabled]="f.invalid" (click)="ajouter(product)">Add Product</button>
 </form>
 
-{{product.id}} {{product.title}} {{product.price}} {{product.quatity}}
+{{product.id}} {{product.title}} {{product.price}} {{product.quantity}}

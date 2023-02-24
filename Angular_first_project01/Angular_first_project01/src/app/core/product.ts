@@ -4,5 +4,5 @@ export class Product {
   price!:number;
   like!:number;
 
-  quatity!:number;
+  quantity!:number;
 }

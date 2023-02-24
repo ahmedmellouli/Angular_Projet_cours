@@ -1,10 +1,12 @@
 <p xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">products works!</p>
-
-{{ categorie }}
+{{ S }}
+<p> hhhhh</p>
 <div>
   <li>selctionner la quantite <input type="number"  name="price" [(ngModel)]="price" [ngStyle]="{'background-color' :price <= 20 ?'blue' : 'green' , 'font-size' : price < 30 ?'20px':'56px'}" > </li>
   <li>selctionner la quantite avec un code source  <input type="number"  [(ngModel)]="price" [ngStyle]="{'background-color' : getColor() ,'font-size': getSize() } " > </li>
 <button [ngClass]="getClass()"> Test </button>
+
+
 </div>
 <ul>
   <div class="row">
